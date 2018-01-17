@@ -98,7 +98,7 @@
     };
     //定义输入法全局对象
     var g = {
-        VERSION:1.1,//使用极爽词库6.0
+        VERSION:1.0,
         status: {
             enable: 0,
             ch: 1,
@@ -2505,15 +2505,11 @@
             if (!t) {//空，返回
                 return
             } else if(wubi_dic[t]){
-                var result=[];
-                for (var i=0;i<wubi_dic[t].length;i++){
-                    result.push([wubi_dic[t][i],1]);
-                }
                 var data = {
                     status:'T',
                     errno:'0',
                     errmsg:'',
-                    result:[result, t]
+                    result:[[[wubi_dic[t],1,{"wubi":t,"type":"IMEDICT"}]], t]
                 };
                 g.data.setData(data);
             } else {
